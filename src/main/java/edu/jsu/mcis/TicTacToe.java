@@ -34,7 +34,7 @@ public class TicTacToe {
         xTurn = true;
     }
     
-    public boolean setMarkAt(int row, int col) {
+    public boolean setMark(int row, int col) {
         if(row >= 0 && row < grid.length && col >= 0 && col < grid[row].length) {
             if(grid[row][col] == Mark.EMPTY) {
                 grid[row][col] = (xTurn)? Mark.X : Mark.O;
@@ -46,7 +46,7 @@ public class TicTacToe {
         else return false;
     }
     
-    public Mark getMarkAt(int row, int col) {
+    public Mark getMark(int row, int col) {
         return grid[row][col];
     }
     

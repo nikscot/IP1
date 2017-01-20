@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     private static final Scanner keyboard = new Scanner(System.in);
 
-    private static Point getUserMove() {
+    private static Point getPlayerMove() {
         System.out.print("Enter a location: ");
         int row = keyboard.nextInt();
         int col = keyboard.nextInt();
@@ -16,8 +16,8 @@ public class Main {
     private static void controlModel(TicTacToe model) {
         boolean success = false;
         while(!success) {
-            Point move = getUserMove();
-            success = model.setMarkAt(move.x, move.y);
+            Point move = getPlayerMove();
+            success = model.setMark(move.x, move.y);
             if(!success) {
                 System.out.println("The location (" + move.x + ", " + move.y + ") is not valid. Choose again.");
             }

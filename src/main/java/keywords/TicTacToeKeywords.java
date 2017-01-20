@@ -10,12 +10,12 @@ public class TicTacToeKeywords {
 	}
 	
 	public void markLocation(int row, int col) {
-		model.setMarkAt(row, col);
+		model.setMark(row, col);
 
 	}
 	
 	public String getMark(int row, int col) {
-		TicTacToe.Mark m = model.getMarkAt(row, col);
+		TicTacToe.Mark m = model.getMark(row, col);
         if(m == TicTacToe.Mark.X) return "X";
         else if(m == TicTacToe.Mark.O) return "O";
         else return "";
