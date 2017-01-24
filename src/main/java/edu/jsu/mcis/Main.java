@@ -1,15 +1,15 @@
 package edu.jsu.mcis;
 
-import java.awt.Point;
-import java.util.Scanner;
+import java.awt.*;
+import java.util.*;
 
 public class Main {
-    private static final Scanner keyboard = new Scanner(System.in);
+    private static final Scanner key = new Scanner(System.in);
 
     private static Point getPlayerMove() {
         System.out.print("Enter a location: ");
-        int row = keyboard.nextInt();
-        int col = keyboard.nextInt();
+        int row = key.nextInt();
+        int col = key.nextInt();
         return new Point(row, col);
     }
     
@@ -32,16 +32,16 @@ public class Main {
         TicTacToe model = new TicTacToe();
         TicTacToe.Result result = TicTacToe.Result.NONE;
         while(result == TicTacToe.Result.NONE) {
-            String turn = (model.isXTurn())? "X" : "O";
+            String turn = (model.changeToX())? "X" : "O";
             viewModel(model);
             System.out.println("It is " + turn + "'s turn.");
             controlModel(model);
             result = model.getResult();
         }
-        String conclusion = "The game is a tie.";
-        if(result == TicTacToe.Result.XWINS) conclusion = "X wins!";
-        else if(result == TicTacToe.Result.OWINS) conclusion = "O wins!";
-        System.out.println(conclusion);
+        String outcome = "The game is a tie.";
+        if(result == TicTacToe.Result.XWINS) outcome = "X wins!";
+        else if(result == TicTacToe.Result.OWINS) outcome = "O wins!";
+        System.out.println(outcome);
 	}
 }
 
